@@ -1,0 +1,53 @@
+﻿@page
+@model SteveGLotto.Pages.LottoNumbersPages.CreateModel
+
+@{
+}
+
+<h4>LottoNumbers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LottoNumbers.LottoNumOne" class="control-label"></label>
+                <input asp-for="LottoNumbers.LottoNumOne" class="form-control" />
+                <span asp-validation-for="LottoNumbers.LottoNumOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LottoNumbers.LottoNumTwo" class="control-label"></label>
+                <input asp-for="LottoNumbers.LottoNumTwo" class="form-control" />
+                <span asp-validation-for="LottoNumbers.LottoNumTwo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LottoNumbers.LottoNumThree" class="control-label"></label>
+                <input asp-for="LottoNumbers.LottoNumThree" class="form-control" />
+                <span asp-validation-for="LottoNumbers.LottoNumThree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LottoNumbers.LottoNumFour" class="control-label"></label>
+                <input asp-for="LottoNumbers.LottoNumFour" class="form-control" />
+                <span asp-validation-for="LottoNumbers.LottoNumFour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LottoNumbers.LottoNumFive" class="control-label"></label>
+                <input asp-for="LottoNumbers.LottoNumFive" class="form-control" />
+                <span asp-validation-for="LottoNumbers.LottoNumFive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LottoNumbers.LottoNumSix" class="control-label"></label>
+                <input asp-for="LottoNumbers.LottoNumSix" class="form-control" />
+                <span asp-validation-for="LottoNumbers.LottoNumSix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

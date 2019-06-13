@@ -1,0 +1,69 @@
+﻿@page
+@model SteveGLotto.Pages.EuroNumbersPages.IndexModel
+
+@{
+}
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumLSOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EuroNumbers[0].EuroNumLSTwo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.EuroNumbers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumThree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumFour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumFive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumLSOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EuroNumLSTwo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EuroDrawID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EuroDrawID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EuroDrawID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

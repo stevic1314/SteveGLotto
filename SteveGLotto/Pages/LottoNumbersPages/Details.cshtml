@@ -1,0 +1,52 @@
+﻿@page
+@model SteveGLotto.Pages.LottoNumbersPages.DetailsModel
+
+@{
+}
+
+<div>
+    <h4>LottoNumbers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LottoNumbers.LottoNumOne)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LottoNumbers.LottoNumOne)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LottoNumbers.LottoNumTwo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LottoNumbers.LottoNumTwo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LottoNumbers.LottoNumThree)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LottoNumbers.LottoNumThree)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LottoNumbers.LottoNumFour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LottoNumbers.LottoNumFour)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LottoNumbers.LottoNumFive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LottoNumbers.LottoNumFive)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LottoNumbers.LottoNumSix)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LottoNumbers.LottoNumSix)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.LottoNumbers.LottoDrawID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
