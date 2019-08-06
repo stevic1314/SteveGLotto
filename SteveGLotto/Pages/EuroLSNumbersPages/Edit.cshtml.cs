@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.EuroNumbersPages
+namespace SteveGLotto.Pages.EuroLSNumbersPages
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace SteveGLotto.Pages.EuroNumbersPages
         }
 
         [BindProperty]
-        public EuroNumbers EuroNumbers { get; set; }
+        public EuroLSNumbers EuroLSNumbers { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace SteveGLotto.Pages.EuroNumbersPages
                 return NotFound();
             }
 
-            EuroNumbers = await _context.tblEuroNumbers.FirstOrDefaultAsync(m => m.EuroDrawID == id);
+            EuroLSNumbers = await _context.tblEuroLSNumbers.FirstOrDefaultAsync(m => m.EuroLSNumberID == id);
 
-            if (EuroNumbers == null)
+            if (EuroLSNumbers == null)
             {
                 return NotFound();
             }
@@ -45,7 +45,7 @@ namespace SteveGLotto.Pages.EuroNumbersPages
                 return Page();
             }
 
-            _context.Attach(EuroNumbers).State = EntityState.Modified;
+            _context.Attach(EuroLSNumbers).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace SteveGLotto.Pages.EuroNumbersPages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EuroNumbersExists(EuroNumbers.EuroDrawID))
+                if (!EuroLSNumbersExists(EuroLSNumbers.EuroLSNumberID))
                 {
                     return NotFound();
                 }
@@ -66,9 +66,9 @@ namespace SteveGLotto.Pages.EuroNumbersPages
             return RedirectToPage("./Index");
         }
 
-        private bool EuroNumbersExists(int id)
+        private bool EuroLSNumbersExists(int id)
         {
-            return _context.tblEuroNumbers.Any(e => e.EuroDrawID == id);
+            return _context.tblEuroLSNumbers.Any(e => e.EuroLSNumberID == id);
         }
     }
 }

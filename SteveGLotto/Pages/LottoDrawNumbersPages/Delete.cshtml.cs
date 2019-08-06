@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.LottoNumbersPages
+namespace SteveGLotto.Pages.LottoDrawNumbersPages
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace SteveGLotto.Pages.LottoNumbersPages
         }
 
         [BindProperty]
-        public LottoNumbers LottoNumbers { get; set; }
+        public LottoDrawNumbers LottoDrawNumbers { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace SteveGLotto.Pages.LottoNumbersPages
                 return NotFound();
             }
 
-            LottoNumbers = await _context.tblLottoNumbers.FirstOrDefaultAsync(m => m.LottoDrawID == id);
+            LottoDrawNumbers = await _context.tblLottoDrawNumbers.FirstOrDefaultAsync(m => m.LottoNumberID == id);
 
-            if (LottoNumbers == null)
+            if (LottoDrawNumbers == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace SteveGLotto.Pages.LottoNumbersPages
                 return NotFound();
             }
 
-            LottoNumbers = await _context.tblLottoNumbers.FindAsync(id);
+            LottoDrawNumbers = await _context.tblLottoDrawNumbers.FindAsync(id);
 
-            if (LottoNumbers != null)
+            if (LottoDrawNumbers != null)
             {
-                _context.tblLottoNumbers.Remove(LottoNumbers);
+                _context.tblLottoDrawNumbers.Remove(LottoDrawNumbers);
                 await _context.SaveChangesAsync();
             }
 

@@ -13,13 +13,15 @@ namespace SteveGLotto.Models
         {
         }
 
-        public DbSet<SteveGLotto.Models.EuroNumbers> tblEuroNumbers { get; set; }
-        public DbSet<SteveGLotto.Models.LottoNumbers> tblLottoNumbers { get; set; }
+        public DbSet<SteveGLotto.Models.EuroDrawNumbers> tblEuroDrawNumbers { get; set; }
+        public DbSet<SteveGLotto.Models.EuroLSNumbers> tblEuroLSNumbers { get; set; }
+        public DbSet<SteveGLotto.Models.LottoDrawNumbers> tblLottoDrawNumbers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<EuroNumbers>().ToTable("tblEuroNumbers");
-            modelBuilder.Entity<LottoNumbers>().ToTable("tblLottoNumbers");
+            modelBuilder.Entity<EuroDrawNumbers>().ToTable("tblEuroDrawNumbers");
+            modelBuilder.Entity<EuroLSNumbers>().ToTable("tblEuroLSNumbers");
+            modelBuilder.Entity<LottoDrawNumbers>().ToTable("tblLottoDrawNumbers");
         }
     }
 }

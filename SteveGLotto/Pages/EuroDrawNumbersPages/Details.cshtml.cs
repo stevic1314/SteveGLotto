@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.LottoNumbersPages
+namespace SteveGLotto.Pages.EuroDrawNumbersPages
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace SteveGLotto.Pages.LottoNumbersPages
             _context = context;
         }
 
-        public LottoNumbers LottoNumbers { get; set; }
+        public EuroDrawNumbers EuroDrawNumbers { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,9 @@ namespace SteveGLotto.Pages.LottoNumbersPages
                 return NotFound();
             }
 
-            LottoNumbers = await _context.tblLottoNumbers.FirstOrDefaultAsync(m => m.LottoDrawID == id);
+            EuroDrawNumbers = await _context.tblEuroDrawNumbers.FirstOrDefaultAsync(m => m.EuroNumberID == id);
 
-            if (LottoNumbers == null)
+            if (EuroDrawNumbers == null)
             {
                 return NotFound();
             }

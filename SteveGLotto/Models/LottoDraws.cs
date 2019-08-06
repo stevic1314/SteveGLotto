@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SteveGLotto.Models
 {
-    public class LottoNumbers
+    public class LottoDraws
     {
         [Key]
         public int LottoDrawID { get; set; }

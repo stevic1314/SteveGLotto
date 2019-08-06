@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.EuroNumbersPages
+namespace SteveGLotto.Pages.EuroLSNumbersPages
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace SteveGLotto.Pages.EuroNumbersPages
         }
 
         [BindProperty]
-        public EuroNumbers EuroNumbers { get; set; }
+        public EuroLSNumbers EuroLSNumbers { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace SteveGLotto.Pages.EuroNumbersPages
                 return NotFound();
             }
 
-            EuroNumbers = await _context.tblEuroNumbers.FirstOrDefaultAsync(m => m.EuroDrawID == id);
+            EuroLSNumbers = await _context.tblEuroLSNumbers.FirstOrDefaultAsync(m => m.EuroLSNumberID == id);
 
-            if (EuroNumbers == null)
+            if (EuroLSNumbers == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace SteveGLotto.Pages.EuroNumbersPages
                 return NotFound();
             }
 
-            EuroNumbers = await _context.tblEuroNumbers.FindAsync(id);
+            EuroLSNumbers = await _context.tblEuroLSNumbers.FindAsync(id);
 
-            if (EuroNumbers != null)
+            if (EuroLSNumbers != null)
             {
-                _context.tblEuroNumbers.Remove(EuroNumbers);
+                _context.tblEuroLSNumbers.Remove(EuroLSNumbers);
                 await _context.SaveChangesAsync();
             }
 

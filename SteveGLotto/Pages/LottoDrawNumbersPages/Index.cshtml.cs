@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.EuroNumbersPages
+namespace SteveGLotto.Pages.LottoDrawNumbersPages
 {
     public class IndexModel : PageModel
     {
@@ -18,11 +18,11 @@ namespace SteveGLotto.Pages.EuroNumbersPages
             _context = context;
         }
 
-        public IList<EuroNumbers> EuroNumbers { get;set; }
+        public IList<LottoDrawNumbers> LottoDrawNumbers { get;set; }
 
         public async Task OnGetAsync()
         {
-            EuroNumbers = await _context.tblEuroNumbers.ToListAsync();
+            LottoDrawNumbers = await _context.tblLottoDrawNumbers.ToListAsync();
         }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.LottoNumbersPages
+namespace SteveGLotto.Pages.EuroDrawNumbersPages
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace SteveGLotto.Pages.LottoNumbersPages
         }
 
         [BindProperty]
-        public LottoNumbers LottoNumbers { get; set; }
+        public EuroDrawNumbers EuroDrawNumbers { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace SteveGLotto.Pages.LottoNumbersPages
                 return NotFound();
             }
 
-            LottoNumbers = await _context.tblLottoNumbers.FirstOrDefaultAsync(m => m.LottoDrawID == id);
+            EuroDrawNumbers = await _context.tblEuroDrawNumbers.FirstOrDefaultAsync(m => m.EuroNumberID == id);
 
-            if (LottoNumbers == null)
+            if (EuroDrawNumbers == null)
             {
                 return NotFound();
             }
@@ -45,7 +45,7 @@ namespace SteveGLotto.Pages.LottoNumbersPages
                 return Page();
             }
 
-            _context.Attach(LottoNumbers).State = EntityState.Modified;
+            _context.Attach(EuroDrawNumbers).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace SteveGLotto.Pages.LottoNumbersPages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!LottoNumbersExists(LottoNumbers.LottoDrawID))
+                if (!EuroDrawNumbersExists(EuroDrawNumbers.EuroNumberID))
                 {
                     return NotFound();
                 }
@@ -66,9 +66,9 @@ namespace SteveGLotto.Pages.LottoNumbersPages
             return RedirectToPage("./Index");
         }
 
-        private bool LottoNumbersExists(int id)
+        private bool EuroDrawNumbersExists(int id)
         {
-            return _context.tblLottoNumbers.Any(e => e.LottoDrawID == id);
+            return _context.tblEuroDrawNumbers.Any(e => e.EuroNumberID == id);
         }
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SteveGLotto.Models;
 
-namespace SteveGLotto.Pages.EuroNumbersPages
+namespace SteveGLotto.Pages.EuroDrawNumbersPages
 {
     public class CreateModel : PageModel
     {
@@ -24,7 +24,7 @@ namespace SteveGLotto.Pages.EuroNumbersPages
         }
 
         [BindProperty]
-        public EuroNumbers EuroNumbers { get; set; }
+        public EuroDrawNumbers EuroDrawNumbers { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,7 +33,7 @@ namespace SteveGLotto.Pages.EuroNumbersPages
                 return Page();
             }
 
-            _context.tblEuroNumbers.Add(EuroNumbers);
+            _context.tblEuroDrawNumbers.Add(EuroDrawNumbers);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
