@@ -12,7 +12,7 @@ namespace SteveGLotto.Models
         [Key]
         public int LottoNumberID { get; set; }
 
-        [DisplayName("Number")]
+        [DisplayName("number")]
         public int LottoNumber { get; set; }
     }
 }

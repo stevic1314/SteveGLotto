@@ -5,9 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
-
-<h4>LottoDrawNumbers</h4>
+<h2>edit lotto draw number</h2>
+<br />
+<h4>lotto draw number</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,14 +20,14 @@
                 <span asp-validation-for="LottoDrawNumbers.LottoNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="save" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a class="btn btn-primary" asp-page="./Index">back to list</a>
 </div>
 
 @section Scripts {

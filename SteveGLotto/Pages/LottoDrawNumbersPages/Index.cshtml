@@ -5,10 +5,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>lotto numbers</h2>
-
+<h2>lotto draw numbers</h2>
+<br />
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-success" asp-page="Create">create lotto draw number</a>
 </p>
 <table class="table">
     <thead>
@@ -26,9 +26,9 @@
                 @Html.DisplayFor(modelItem => item.LottoNumber)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.LottoNumberID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.LottoNumberID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.LottoNumberID">Delete</a>
+                <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.LottoNumberID">edit</a>
+                @*<a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.LottoNumberID">details</a>*@
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.LottoNumberID">delete</a>
             </td>
         </tr>
 }
